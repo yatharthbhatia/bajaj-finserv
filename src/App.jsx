@@ -1,21 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-import { useState, useEffect } from 'react';
-import SearchBar from './components/SearchBar';
-import FilterPanel from './components/FilterPanel';
-import DoctorCard from './components/DoctorCard';
-
 function App() {
-  const [doctors, setDoctors] = useState([]);
-  const [filteredDoctors, setFilteredDoctors] = useState([]);
-  const [suggestions, setSuggestions] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [filters, setFilters] = useState({
-    consultationType: '',
-    specialties: [],
-    sortBy: ''
-  });
+  const [searchTerm, setSearchTerm] = useState('')
+  const [suggestions, setSuggestions] = useState([])
+  const [doctors, setDoctors] = useState([])
+  const [filteredDoctors, setFilteredDoctors] = useState([])
+  const [showSuggestions, setShowSuggestions] = useState(false)
 
   const handleSearch = (value) => {
     setSearchTerm(value)
